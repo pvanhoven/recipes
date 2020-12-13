@@ -16,15 +16,21 @@ provider "aws" {
   }
 }
 
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "recipe-dynamodb-table" {
   name           = "Recipes"
   billing_mode   = "PROVISIONED"
   read_capacity  = 1
   write_capacity = 1
   hash_key       = "Id"
+  range_key      = "Name"
 
   attribute {
     name = "Id"
+    type = "S"
+  }
+
+  attribute {
+    name = "Name"
     type = "S"
   }
 }
