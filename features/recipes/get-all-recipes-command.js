@@ -28,7 +28,11 @@ const getAllRecipesCommand = async function getAllRecipesCommand() {
     console.log(temp.Items);
     console.log(temp.Items.map((i) => `${i.id} ${i.userId}`).join(', '));
     console.log("ret'd");
-    return temp;
+    return temp.Items.map((i) => ({
+      id: i.id.S,
+      userId: i.userId.S,
+      name: i.name.S,
+    }));
   } catch (err) {
     console.error(err);
     console.error(JSON.stringify(err, null, 2));
