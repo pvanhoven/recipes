@@ -1,0 +1,7 @@
+[
+    {
+        "Delete": {
+            "IndexName": "search_by_user"
+        }
+    }
+]

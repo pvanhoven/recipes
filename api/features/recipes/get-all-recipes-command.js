@@ -6,9 +6,9 @@ const getAllRecipesCommand = async function getAllRecipesCommand() {
   try {
     const queryCommand = new QueryCommand({
       TableName: 'Recipes',
-      IndexName: 'Seach_by_user',
+      IndexName: 'search_by_user',
       KeyConditionExpression: 'userId = :uid',
-      ProjectionExpression: 'userId, id, #nm',
+      ProjectionExpression: 'userId, id, #nm, ingredients, instructions',
       ExpressionAttributeNames: {
         '#nm': 'name',
       },
@@ -22,6 +22,8 @@ const getAllRecipesCommand = async function getAllRecipesCommand() {
       id: i.id.S,
       userId: i.userId.S,
       name: i.name.S,
+      ingredeints: i.ingredeints?.SS,
+      instructions: i.instructions?.SS
     }));
   } catch (err) {
     console.error(err);

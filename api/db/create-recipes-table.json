@@ -30,7 +30,7 @@
   },
   "GlobalSecondaryIndexes": [
     {
-      "IndexName": "Seach_by_user",
+      "IndexName": "search_by_user",
       "KeySchema": [
         {
           "AttributeName": "userId",
@@ -42,7 +42,11 @@
         }
       ],
       "Projection": {
-        "ProjectionType": "KEYS_ONLY"
+        "ProjectionType": "INCLUDE",
+        "NonKeyAttributes": [
+          "ingredients",
+          "instructions"
+        ]
       },
       "ProvisionedThroughput": {
         "ReadCapacityUnits": 1,

@@ -1,0 +1,28 @@
+[
+    {
+        "Create": {
+            "IndexName": "search_by_user",
+            "KeySchema": [
+                {
+                    "AttributeName": "userId",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "name",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "INCLUDE",
+                "NonKeyAttributes": [
+                    "ingredients",
+                    "instructions"
+                ]
+            },
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 1,
+                "WriteCapacityUnits": 1
+            }
+        }
+    }
+]
