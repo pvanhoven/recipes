@@ -1,7 +1,7 @@
 <p>my-recipes works!</p>
 <ul>
   <li *ngFor="let recipe of recipes$ | async">
-    <div>{{ recipe.name }}</div>
+    <a [routerLink]="recipe.url">{{ recipe.name }}</a>
   </li>
 </ul>
 <p>my-recipes works!</p>

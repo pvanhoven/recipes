@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
-  declarations: [AppComponent, MyRecipesComponent],
+  declarations: [AppComponent, MyRecipesComponent, RecipeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
